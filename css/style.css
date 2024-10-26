@@ -1,0 +1,148 @@
+/* step 1 */
+#logo {
+    width: 25px;
+    opacity: 0;
+    animation: grows 5s forwards;
+}
+@keyframes grows {
+    from {width: 25px; opacity: 0;}
+    to {width: 475px; opacity: 1;}
+}
+/* step 2 */
+body {
+    font-family: Poppins, serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+/* step 3 */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* step 4 */
+.nav_links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* step 5 */
+a:visited {
+    color: blue;
+}
+/* step 6 */
+.card {
+    background-color: white;
+    border-radius: 50px 50px 0 0;
+    overflow: hidden;
+}
+.card > header{
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0;
+    border-radius: 50px 50px 0 0;
+}
+/* step 7 */
+.card{
+    flex-basis: 450px;
+}
+/* step 8 */
+.pricing{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+/* step 9 */
+.gallery img{
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+/* step 10 */
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+/* 900 px */
+@media screen and (min-width: 900px){
+    /* step 11 */
+    header{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    .nav_links{
+        flex-direction: row;
+    }
+    /* step 12 */
+    .card{
+        flex-basis: 275px;
+    }
+    .pricing{
+        align-items: center;
+    }
+    /* step 13 */
+    body > header {
+        position: fixed;
+        top: 0;
+        left: 0;        
+        width: 100%;
+        z-index: 1000;
+    }
+    main {
+        padding-top: 88.422px;
+    }
+}
+/* reduced motion */
+@media all and (prefers-reduced-motion: reduce){
+    /* step 14 */
+    #logo {
+        animation: none;
+        opacity: 1;
+        width: 475px;
+    }
+}
+/* portrait */
+@media print{
+    /* step 15 */
+    body {
+        font-family: Arial, Helvetica;
+    }
+    /* step 16 */
+    body{
+        background-image: none;
+    }
+    /* step 17 */
+    .nav_links {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+    .nav_links li {
+        margin: 0 30%;
+    }
+    /* step 18 */
+    .pricing {
+        flex-flow: row nowrap;
+        align-items: flex-end;
+    }
+    /* step 19 */
+    .card {
+        border: 2px solid #45ADDD;
+    }
+    /* step 20 */
+    #gallery {
+        display: none;
+    }
+    .gallery {
+        display: none;
+    }
+    /* step 21 */
+    .card li:nth-child(2)::after{
+        content: "👍";
+    }
+}
